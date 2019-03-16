@@ -1,0 +1,23 @@
+@import 'src/stylesheets/settings/variables';
+
+.projects-visual {
+  position: relative;
+
+  &__image {
+    position: relative;
+    width: 25vw;
+    height: 65vh;
+    background-image: url('../../../../../assets/works/gagliardi/image.jpg');
+    background-size: cover;
+  }
+
+  &__title {
+    font-family: $fontSerif;
+    font-size: 6.6vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    word-break: initial;
+    transform: translateX(-50%) translateY(-50%);
+  }
+}

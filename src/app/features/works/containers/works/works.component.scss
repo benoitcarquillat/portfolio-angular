@@ -1,0 +1,24 @@
+@import 'src/stylesheets/settings/variables';
+
+.works {
+
+  height: calc(100vh - #{$header-height-large});
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__left {
+    margin-left: 20%;
+    flex-basis: 45%;
+  }
+
+  &__right {
+    margin-left: 10%;
+    flex-basis: 25%;
+    display: flex;
+    align-items: flex-end;
+  }
+}

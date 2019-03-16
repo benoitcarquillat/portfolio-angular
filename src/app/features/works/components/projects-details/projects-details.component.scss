@@ -1,0 +1,21 @@
+@import 'src/stylesheets/settings/variables';
+
+.projects-details {
+
+  &__title {
+    font-size: 25px;
+    font-weight: $fontbold;
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    color: $grey_font;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  &__role {
+    margin-bottom: 10px;
+  }
+
+}
