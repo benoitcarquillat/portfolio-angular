@@ -1,0 +1,23 @@
+h1, h2, h3, h4, h5, h6 {
+  font-size:   inherit;
+  font-family: inherit;
+  line-height: inherit;
+  font-weight: inherit;
+  margin:      0;
+  padding:     0;
+}
+
+
+
+.h1-like{
+  font-weight: $fontblack;
+  line-height: 1.1;
+  text-transform: uppercase;
+
+  font-size: 26px;
+  margin: 0 0 20px 0;
+
+  @media screen and (min-width: $large){
+    font-size: 36px;
+  }
+}

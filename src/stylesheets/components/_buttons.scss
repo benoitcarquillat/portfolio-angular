@@ -1,0 +1,63 @@
+.button {
+  appearance      : none;
+  border          : none;
+  color           : $white;
+  cursor          : pointer;
+  display         : inline-block;
+  font-size       : 18px;
+  font-weight     : $fontlight;
+  line-height     : 20px;
+  margin-left     : 30px;
+  outline         : none;
+  padding         : 15px 0;
+  text-decoration : none;
+
+  &::before {
+    background-color: $black;
+    content         : "";
+    display         : block;
+    height          : 1px;
+    margin-left     : -30px;
+    margin-top      : 10px;
+    position        : absolute;
+    transform       : translateY(-50%);
+    transition      : all 150ms ease-out;
+    width           : 18px;
+  }
+
+  &:hover, &:focus{
+    &::before {
+      margin-left   : -35px;
+      width         : 27px;
+    }
+  }
+  &:focus{
+    text-decoration: underline;
+  }
+
+  &--red {
+    color: $amaranth;
+    &::before {
+      background-color: $white;
+    }
+  }
+
+  &--red-mark {
+    &::before {
+      background-color: $amaranth;
+    }
+  }
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--card {
+    color:$amaranth;
+    font-size: 14px;
+    padding: 0;
+
+    &::before {
+      background-color: $big-stone;
+    }
+  }
+}

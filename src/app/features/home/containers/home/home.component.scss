@@ -1,0 +1,10 @@
+@import 'src/stylesheets/settings/variables';
+
+.home {
+  &__title {
+    font-family: 'Merriweather', serif;
+    font-weight: $fontbold;
+    text-transform: uppercase;
+    font-size: 150px;
+  }
+}

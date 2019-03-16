@@ -1,0 +1,44 @@
+# Global configuration
+# image: atlassianlabs/docker-node-jdk-chrome-firefox
+# image: cypress/base:10
+
+image: cypress/browsers:chrome69
+options:
+  max-time: 10
+
+# Shared steps
+stepdefinitions:
+  - teststep: &teststep
+      name: Install, Lint, Run Tests
+      deployment: test
+      caches:
+        - node
+      script:
+        - npm ci
+        - npm run lint
+        - npm run build:ci
+        - npm run test:ci
+        - npm run e2e:ci
+        - npm run lighthouse:ci
+      artifacts:
+        - build/**
+        - coverage/**
+        - cypress/screenshots/**
+        - cypress/videos/**
+
+pipelines:
+  # Runs on every branch but master and develop
+  default:
+    - step: *teststep
+
+  branches:
+    # Runs on develop only
+    develop:
+      - step: *teststep
+      - step:
+          name: Deploy to GCloud
+          deployment: staging
+          script:
+            # Set a couple variables
+            - pwd
+            - ls

@@ -1,0 +1,34 @@
+/* removes any indents and bullet points from lists */
+@mixin list-bare() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin expand-link() {
+  &::before {
+    bottom: 0;
+    content: "";
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+  }
+}
+
+@mixin absolute-center($axis: "xy") {
+  @if $axis == "xy" {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  } @else if $axis == "x" {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if $axis == "y" {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  position: absolute;
+}

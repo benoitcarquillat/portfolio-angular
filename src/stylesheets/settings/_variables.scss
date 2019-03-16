@@ -1,0 +1,61 @@
+// fonts
+$fontlight  : 300;
+$fontregular: 400;
+$fontbold   : 700;
+$fontblack  : 800;
+
+// Container
+$container-large  : 1680px;
+$container-medium : 1250px;
+
+// Layout
+$xxsmall : 375px;
+$xsmall  : 480px;
+$small   : 600px;
+$medium  : 768px;
+$large   : 1024px;
+$xlarge  : 1280px;
+$xxlarge : 1440px;
+
+
+:root {
+  --medium: 768;
+}
+
+// Gutter
+$gutter-small: 20px;
+$gutter-large: 20px;
+
+// Height
+$header-height-small: 50px;
+$header-height-large: 70px;
+$menu-width         : 315px;
+
+// Z-index
+$navigationBtn:   900;
+$navigation:      800;
+$header:          200;
+$z-alert:         150;
+$cookie:          150;
+$decoration:      120;
+$zbookmark:       110;
+$zcontent:        100;
+$reinsurance:     3;
+$ucLouvreBanner2: 2;
+$ucLouvreBanner1: 1;
+$decoration:      -1;
+
+// Colors
+// $big-stone: #112134;
+// $firefly:   #0d1a29;
+$amaranth:     #E51A50;
+$big-stone:    #112134;
+$black:        #000;
+$dove-gray:    #999999;
+$firefly:      #0D1A29;
+$louvre-lens:  #C13B26;
+$malachite:    #4daf7c;
+$white:        #fff;
+
+
+

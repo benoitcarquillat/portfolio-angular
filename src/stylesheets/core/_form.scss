@@ -1,0 +1,220 @@
+::ng-deep .contact {
+
+  input, textarea, select {
+    background-color: $big-stone;
+    border:none;
+    border-bottom: 1px solid $dove-gray;
+    color: $white;
+    display:block;
+    font-size:16px;
+    font-weight:300;
+    padding:10px 10px 10px 5px;
+    width:100%;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border-bottom: 1px solid $dove-gray;
+      -webkit-text-fill-color: $white;
+      -webkit-box-shadow: 0 0 0px 1000px $big-stone inset;
+    }
+
+  }
+
+  textarea {
+    height: 150px;
+    line-height: 1.6em;
+    overflow: auto;
+    padding-left: 5px;
+    position: relative;
+    resize: none;
+  }
+
+  input:focus, textarea:focus{
+    outline:none;
+  }
+
+  /* LABEL ======================================= */
+  label,
+  input:placeholder-shown ~ label,
+  textarea:placeholder-shown ~ label {
+    color: $white;
+    font-size:16px;
+    font-weight:300;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:200ms ease all;
+    z-index: 100;
+
+
+    &.error{
+      color:$amaranth;
+      font-weight:$fontbold;
+    }
+  }
+
+  /* active state */
+  /* changed from input:valid to a state which check if input is empty*/
+  input:focus ~ label,
+  textarea:focus ~ label,
+  input:not(:placeholder-shown) ~ label,
+  textarea:not(:placeholder-shown) ~ label {
+    font-size:14px;
+    top:-18px;
+    opacity: 0.6;
+
+    &.error{
+      opacity: 1;
+      color:$amaranth;
+    }
+  }
+
+  /* BOTTOM BARS ================================= */
+  .bar 	{ position:relative; display:block; width:100%; }
+  .bar:before, .bar:after 	{
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+    background:rgba($white,.8);
+    bottom:1px;
+    content:'';
+    height:2px;
+    position:absolute;
+    transition:0.2s ease all;
+    width:0;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%;
+  }
+
+
+  button[type=submit] {
+    appearance: none;
+    background-color: $white;
+    border:0;
+    color: $amaranth;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    height: 50px;
+    letter-spacing: 1px;
+    line-height: 20px;
+    outline: none;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    transition: all 200ms ease-in-out;
+    white-space: nowrap;
+
+    span {
+      background-color: $big-stone;
+      content: " ";
+      display: inline-block;
+      height: 1px;
+      margin-right: 10px;
+      vertical-align: middle;
+      transition: all 200ms ease-in-out;
+      width: 30px;
+    }
+
+    &.disabled{
+      background-color: $white;
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &:focus, &:hover {
+        background-color: $white;
+        color:$amaranth;
+        span{
+          background-color: $big-stone;
+        }
+      }
+    }
+
+    @media screen and (min-width:$medium) {
+      font-size: 16px;
+      height: 50px;
+      letter-spacing: 1px;
+      line-height: 20px;
+      padding: 10px 15px;
+
+      &:focus, &:hover {
+        background-color: $amaranth;
+        color:$white;
+        span{
+          background-color: $white;
+        }
+      }
+    }
+  }
+
+
+  /* Base for label styling */
+
+  label.label-checkbox {
+    pointer-events: auto;
+    display: block;
+  }
+
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked {
+    position: absolute;
+    left: -9999px;
+  }
+  [type="checkbox"]:not(:checked) + label.label-checkbox,
+  [type="checkbox"]:checked + label.label-checkbox {
+    top:0px;
+    opacity: 1;
+    position: relative;
+    padding-left: 1.95em;
+    cursor: pointer;
+  }
+
+  /* checkbox aspect */
+  [type="checkbox"]:not(:checked) + label.label-checkbox:before,
+  [type="checkbox"]:checked + label.label-checkbox:before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 18px; height: 18px;
+    border: 1px solid $white;
+    background: $big-stone;
+    border-radius: 0;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+    transition: all 200ms ease-out;
+  }
+
+  [type="checkbox"]:checked + label.label-checkbox:before {
+    top:3px;
+    opacity: 1;
+    transform: rotate(-45deg);
+    border:2px solid transparent!important;
+    border-left: 2px solid $white!important;
+    border-bottom: 2px solid $white!important;
+    width: 18px; height: 10px;
+  }
+
+
+  /* disabled checkbox */
+  [type="checkbox"]:disabled:not(:checked) + label.label-checkbox:before,
+  [type="checkbox"]:disabled:checked + label.label-checkbox:before {
+    box-shadow: none;
+    border-color: $black;
+    background-color: rgba($black,.8);
+  }
+  [type="checkbox"]:disabled:checked + label.label-checkbox:after {
+    color: $black;
+  }
+  [type="checkbox"]:disabled + label.label-checkbox {
+    color: $black;
+  }
+  /* accessibility */
+  [type="checkbox"]:checked:focus + label.label-checkbox:before,
+  [type="checkbox"]:not(:checked):focus + label.label-checkbox:before {
+    border: 2px solid $white;
+  }
+
+}
