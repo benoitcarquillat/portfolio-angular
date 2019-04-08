@@ -1,13 +1,13 @@
 @import 'src/stylesheets/settings/variables';
 
 .works {
-
-  height: calc(100vh - #{$header-height-large});
+  height: calc(100vh - #{$header-height-large} - #{$footer-height-large});
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 
   &__wrapper {
-    display: flex;
+    display: grid;
   }
 
   &__left {
@@ -20,5 +20,21 @@
     flex-basis: 25%;
     display: flex;
     align-items: flex-end;
+  }
+
+  &__footer {
+    display: flex;
+    height: $footer-height-large;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    flex-basis: 100%;
+  }
+
+  &__footer-content {
+    display: flex;
+    justify-content: space-between;
   }
 }

@@ -4,10 +4,11 @@ import { WorksRoutingModule } from './works.routes';
 
 import * as fromContainers from './containers';
 import * as fromComponents from './components';
-import { ProjectsVisualComponent } from './components/projects-visual/projects-visual.component';
+
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [...fromContainers.containers, ...fromComponents.components, ProjectsVisualComponent],
-  imports: [CommonModule, WorksRoutingModule]
+  declarations: [...fromContainers.containers, ...fromComponents.components],
+  imports: [CommonModule, WorksRoutingModule, SharedModule]
 })
 export class WorksModule {}

@@ -1,0 +1,21 @@
+@import 'src/stylesheets/settings/variables';
+
+.cta-button {
+  font-weight: $fontbold;
+
+  svg {
+    margin-right: 0px;
+    margin-left: 10px;
+  }
+
+  &[data-direction="left"] {
+    display: flex;
+    flex-direction: row-reverse;
+
+    svg {
+      margin-left: 0px;
+      margin-right: 10px;
+      transform: rotate(-180deg);
+    }
+  }
+}

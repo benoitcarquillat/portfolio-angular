@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { SharedModule } from '../shared/shared.module';
 
 import { AppRoutingModule } from './app-routes';
 
@@ -26,13 +27,14 @@ export const metaReducers: MetaReducer<
 
 @NgModule({
   declarations: [
-    ...fromContainers.containers,
+    ...fromContainers.containers
     // ...fromComponents.components
   ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot(effects),
     StoreRouterConnectingModule.forRoot(),

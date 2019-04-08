@@ -22,9 +22,14 @@
   }
 
   &__nav-item {
+    color: $grey_font;
     margin: 0 20px;
     font-weight: $fontregular;
     font-size: 16px;
+  }
+
+  &__active-link {
+    color: $white;
   }
 
 }
