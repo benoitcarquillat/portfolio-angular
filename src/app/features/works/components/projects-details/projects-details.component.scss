@@ -3,19 +3,32 @@
 .projects-details {
 
   &__title {
-    font-size: 25px;
     font-weight: $fontbold;
+    font-size: 20px;
     margin-bottom: 20px;
+
+    @media screen and (min-width: $large) {
+      font-size: 25px;
+    }
   }
 
   &__content {
     color: $grey_font;
-    font-size: 14px;
     line-height: 20px;
+    font-size: 12px;
+
+    @media screen and (min-width: $large) {
+      font-size: 14px;
+    }
   }
 
   &__role {
     margin-bottom: 10px;
+    font-size: 14px;
+
+    @media screen and (min-width: $large) {
+      font-size: 16px;
+    }
   }
 
   &__button {

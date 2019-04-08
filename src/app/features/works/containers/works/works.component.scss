@@ -2,25 +2,34 @@
 
 .works {
 
-  height: calc(100vh - #{$header-height-large} - #{$footer-height-large});
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 
+  @media screen and (min-width: $medium) {
+    height: calc(100vh - #{$header-height-large} - #{$footer-height-large});
+  }
+
   &__wrapper {
-    display: flex;
+    @media screen and (min-width: $medium) {
+      display: flex;
+    }
   }
 
   &__left {
-    margin-left: 20%;
-    flex-basis: 45%;
+    @media screen and (min-width: $medium) {
+      margin-left: 20%;
+    }
   }
 
   &__right {
-    margin-left: 10%;
-    flex-basis: 25%;
     display: flex;
     align-items: flex-end;
+
+    @media screen and (min-width: $medium) {
+      margin-left: 15%;
+      flex-basis: 25%;
+    }
   }
 
   &__footer {

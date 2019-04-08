@@ -8,7 +8,11 @@
   &__logo {
     font-weight: $fontbold;
     font-family: $fontSerif;
-    font-size: 20px;
+    font-size: 14px;
+
+    @media screen and (min-width: $medium) {
+      font-size: 20px;
+    }
   }
 
   &__wrapper {
@@ -23,9 +27,15 @@
 
   &__nav-item {
     color: $grey_font;
-    margin: 0 20px;
     font-weight: $fontregular;
-    font-size: 16px;
+    font-size: 14px;
+    margin: 0 10px;
+    word-break: initial;
+
+    @media screen and (min-width: $medium) {
+      margin: 0 20px;
+      font-size: 16px;
+    }
   }
 
   &__active-link {
