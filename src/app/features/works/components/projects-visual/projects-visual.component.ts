@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+import * as fromModels from '../../models';
 
 @Component({
   selector: 'projects-visual',
@@ -6,10 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects-visual.component.scss']
 })
 export class ProjectsVisualComponent implements OnInit {
+  @Input() work: fromModels.Program;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

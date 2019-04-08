@@ -1,11 +1,10 @@
 <div class="projects-details">
-  <h2 class="projects-details__title"> Two months in Malta </h2>
+  <h2 class="projects-details__title"> {{ work.subtitle }} </h2>
   <div class="projects-details__role">
-    Role : <span> Designer </span>
+    Role : <span> {{ work.role }} </span>
   </div>
   <div class="projects-details__content">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam,
+    {{ work.content }}
   </div>
   <div class="projects-details__button">
     <cta-button textToDisplay="View Case"></cta-button>

@@ -2,11 +2,16 @@
   <div class="container-medium">
     <div class="works__wrapper">
       <div class="works__left">
-        <projects-visual></projects-visual>
+
+        <div *ngFor="let work of works" [@cookieBanner]="work.title">
+          <projects-visual [work]="work"></projects-visual>
+        </div>
       </div>
 
       <div class="works__right">
-        <projects-details></projects-details>
+        <ng-container *ngFor="let work of works">
+          <projects-details [work]="work"></projects-details>
+        </ng-container>
       </div>
     </div>
   </div>
@@ -14,8 +19,8 @@
   <div class="works__footer">
     <div class="container-medium">
       <div class="works__footer-content">
-        <cta-button textToDisplay="Prev" direction="left"></cta-button>
-        <cta-button textToDisplay="Next"></cta-button>
+        <cta-button textToDisplay="Prev" direction="left" (click)="testanime()"></cta-button>
+        <cta-button textToDisplay="Next" (click)="testanime()"></cta-button>
       </div>
     </div>
   </div>
