@@ -1,13 +1,14 @@
 @import 'src/stylesheets/settings/variables';
 
 .works {
+
   height: calc(100vh - #{$header-height-large} - #{$footer-height-large});
   display: flex;
   align-items: center;
   flex-wrap: wrap;
 
   &__wrapper {
-    display: grid;
+    display: flex;
   }
 
   &__left {
