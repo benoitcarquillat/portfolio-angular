@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import * as fromModels from '../../models';
+import * as fromSharedModels from '@shared/models';
 
 @Component({
   selector: 'projects-details',
@@ -7,7 +7,7 @@ import * as fromModels from '../../models';
   styleUrls: ['./projects-details.component.scss']
 })
 export class ProjectsDetailsComponent implements OnInit {
-  @Input() work: fromModels.Program;
+  @Input() work: fromSharedModels.Work;
 
   constructor() {}
 

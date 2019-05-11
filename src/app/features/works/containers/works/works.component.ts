@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as fromModels from '../../models';
+import * as fromSharedModels from '@shared/models';
 import * as fromAnimations from '../../animations';
 
 @Component({
@@ -10,7 +10,7 @@ import * as fromAnimations from '../../animations';
   animations: [fromAnimations.testanime]
 })
 export class WorksComponent implements OnInit {
-  public works: Array<fromModels.Program>;
+  public works: Array<fromSharedModels.Work>;
 
   constructor() {}
 
@@ -24,12 +24,12 @@ export class WorksComponent implements OnInit {
         content:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         slug: 'gagliardi',
-        role: fromModels.Roles.DESIGNER
+        role: fromSharedModels.Roles.DESIGNER
       }
     ];
   }
 
-  testanime() {
+  public testanime() {
     this.works = [
       {
         id: 1,
@@ -39,7 +39,7 @@ export class WorksComponent implements OnInit {
         content:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
         slug: 'gagliardi',
-        role: fromModels.Roles.DESIGNER
+        role: fromSharedModels.Roles.DESIGNER
       }
     ];
   }

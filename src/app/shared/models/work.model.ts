@@ -3,7 +3,7 @@ export const enum Roles {
   DEVELOPER = 'Developer'
 }
 
-export interface Program {
+export interface Work {
   id: number;
   image: string;
   title: string;
