@@ -17,16 +17,16 @@ export const initialState: fromModels.WorksListState = adapter.getInitialState({
 
 export function reducer(
   state = initialState,
-  action: fromActions.FullListActions
+  action: fromActions.WorksActions
 ): fromModels.WorksListState {
   switch (action.type) {
-    case fromActions.FullListActionTypes.LOAD_FULLLIST:
+    case fromActions.WorksActionTypes.LOAD_WORKS:
       return {
         ...state,
         loading: true
       };
 
-    case fromActions.FullListActionTypes.LOAD_FULLLIST_SUCCESS:
+    case fromActions.WorksActionTypes.LOAD_WORKS_SUCCESS:
       const programs = action.payload;
       return adapter.addAll(programs, {
         ...state,
@@ -34,7 +34,7 @@ export function reducer(
         loaded: true
       });
 
-    case fromActions.FullListActionTypes.LOAD_FULLLIST_FAIL:
+    case fromActions.WorksActionTypes.LOAD_WORKS_FAIL:
       return {
         ...state,
         loading: false,

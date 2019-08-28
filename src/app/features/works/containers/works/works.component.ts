@@ -15,32 +15,32 @@ export class WorksComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.works = [
-      {
-        id: 1,
-        image: 'gagliardi/image.jpg',
-        title: 'Gagliardi',
-        subtitle: 'Two months in Malta',
-        content:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-        slug: 'gagliardi',
-        role: fromSharedModels.Roles.DESIGNER
-      }
-    ];
+    // this.works = [
+    //   {
+    //     id: 1,
+    //     image: 'gagliardi/image.jpg',
+    //     title: 'Gagliardi',
+    //     subtitle: 'Two months in Malta',
+    //     content:
+    //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+    //     slug: 'gagliardi',
+    //     role: fromSharedModels.Roles.DESIGNER
+    //   }
+    // ];
   }
 
   public testanime() {
-    this.works = [
-      {
-        id: 1,
-        image: 'gagliardi/image.jpg',
-        title: 'Yoozly',
-        subtitle: 'Two months in Malta',
-        content:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
-        slug: 'gagliardi',
-        role: fromSharedModels.Roles.DESIGNER
-      }
-    ];
+    // this.works = [
+    //   {
+    //     id: 1,
+    //     image: 'gagliardi/image.jpg',
+    //     title: 'Yoozly',
+    //     subtitle: 'Two months in Malta',
+    //     content:
+    //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.',
+    //     slug: 'gagliardi',
+    //     role: fromSharedModels.Roles.DESIGNER
+    //   }
+    // ];
   }
 }

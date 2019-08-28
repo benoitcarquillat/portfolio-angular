@@ -10,5 +10,6 @@ export interface Work {
   subtitle: string;
   content: string;
   slug: string;
+  order: number;
   role: Roles;
 }

@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { SharedModule } from '../shared/shared.module';
+import { HttpClientModule } from '@angular/common/http';
 
+import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from './app-routes';
 
 import { StoreModule, MetaReducer, ActionReducerMap } from '@ngrx/store';
@@ -35,6 +36,7 @@ export const metaReducers: MetaReducer<
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     SharedModule.forRoot(),
     StoreModule.forRoot(reducers, { metaReducers }),

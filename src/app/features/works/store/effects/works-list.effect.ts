@@ -12,20 +12,18 @@ import * as fromSharedModel from '@shared/models';
 export class WorksListEffect {
   constructor(
     private action$: Actions,
-    private programsService: fromServices.WorksService
+    private worksService: fromServices.WorksService
   ) {}
 
   @Effect()
-  fulllist$ = this.action$.pipe(
-    ofType<fromActions.FullListActions>(
-      fromActions.FullListActionTypes.LOAD_FULLLIST
-    ),
+  Works$ = this.action$.pipe(
+    ofType<fromActions.LoadWorks>(fromActions.WorksActionTypes.LOAD_WORKS),
     switchMap(() => {
-      return this.programsService.getPrograms().pipe(
+      return this.worksService.getWorks().pipe(
         mergeMap((entities: fromSharedModel.Work[]) => [
-          new fromActions.LoadFullListSuccess(entities)
+          new fromActions.LoadWorksSuccess(entities)
         ]),
-        catchError(error => of(new fromActions.LoadFullListFail(error)))
+        catchError(error => of(new fromActions.LoadWorksFail(error)))
       );
     })
   );

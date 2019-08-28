@@ -1,0 +1,24 @@
+# CMD : docker-compose up -> run docker container
+# CMD : docker-compose down -> shutdown
+
+version: '3'
+services:
+  node:
+    build: .
+    ports:
+      - '3000:3000'
+    command: npm run start:dev
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
+    depends_on:
+      - db
+  db:
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: portfolio
+    ports:
+      - '5432:5432'

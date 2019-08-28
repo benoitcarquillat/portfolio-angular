@@ -5,11 +5,11 @@ import { Routes, RouterModule } from '@angular/router';
 export const appRoutes: Routes = [
   {
     path: '',
-    loadChildren: '../features/works/works.module#WorksModule'
+    loadChildren: () => import('../features/works/works.module').then(m => m.WorksModule)
   },
   {
     path: 'error/404',
-    loadChildren: '../features/error-pages/error-pages.module#ErrorPagesModule'
+    loadChildren: () => import('../features/error-pages/error-pages.module').then(m => m.ErrorPagesModule)
   },
   {
     path: '**',
