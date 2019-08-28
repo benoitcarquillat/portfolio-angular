@@ -19,13 +19,13 @@ import {
   RouterStateSerializer
 } from '@ngrx/router-store';
 
-import { storeFreeze } from 'ngrx-store-freeze';
+
 
 import * as fromContainers from './containers';
 
 export const metaReducers: MetaReducer<
   fromModels.AppcoreState
->[] = !environment.production ? [storeFreeze] : [];
+>[] = !environment.production ? [] : [];
 
 @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ export const metaReducers: MetaReducer<
     HttpClientModule,
     AppRoutingModule,
     SharedModule.forRoot(),
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers, { metaReducers, runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true } }),
     EffectsModule.forRoot(effects),
     StoreRouterConnectingModule.forRoot(),
     !environment.production
