@@ -19,13 +19,9 @@ import {
   RouterStateSerializer
 } from '@ngrx/router-store';
 
-
-
 import * as fromContainers from './containers';
 
-export const metaReducers: MetaReducer<
-  fromModels.AppcoreState
->[] = !environment.production ? [] : [];
+export const metaReducers: MetaReducer<{}>[] = [];
 
 @NgModule({
   declarations: [
@@ -39,9 +35,17 @@ export const metaReducers: MetaReducer<
     HttpClientModule,
     AppRoutingModule,
     SharedModule.forRoot(),
-    StoreModule.forRoot(reducers, { metaReducers, runtimeChecks: { strictStateImmutability: true, strictActionImmutability: true } }),
-    EffectsModule.forRoot(effects),
-    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot(
+      {},
+      {
+        metaReducers,
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true
+        }
+      }
+    ),
+    EffectsModule.forRoot([]),
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 50 })
       : []

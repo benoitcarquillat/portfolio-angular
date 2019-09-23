@@ -20,6 +20,7 @@ import { SharedModule } from '../../shared/shared.module';
     CommonModule,
     WorksRoutingModule,
     SharedModule,
+    ServicesModuleModule,
     StoreModule.forFeature('works', reducers),
     EffectsModule.forFeature(effects)
   ],

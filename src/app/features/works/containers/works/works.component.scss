@@ -2,6 +2,7 @@
 
 .works {
 
+
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -30,6 +31,15 @@
       margin-left: 15%;
       flex-basis: 25%;
     }
+  }
+
+  &__item-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__work-wrapper {
+    position: relative;
   }
 
   &__footer {

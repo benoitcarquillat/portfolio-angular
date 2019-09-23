@@ -7,12 +7,16 @@ import { ServicesModuleModule } from './services-module.module';
 import * as fromSharedModel from '@shared/models';
 import { environment } from '@environments/environment';
 
+import { Observable } from 'rxjs';
+
 @Injectable({ providedIn: ServicesModuleModule })
 export class WorksService {
+  public works$: Observable<fromSharedModel.Work[]>;
+
   constructor(private http: HttpClient) {}
 
   public getWorks() {
-    const endpoint = `${environment}/project`;
+    const endpoint = `${environment.dockerApi}/project`;
 
     return this.http.get<fromSharedModel.Work[]>(endpoint).pipe(
       map((datas: fromSharedModel.Work[]) => {

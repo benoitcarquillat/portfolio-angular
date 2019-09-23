@@ -1,17 +1,25 @@
-<div class="works">
+<div class="works" *ngIf="(works$ | async) as works">
   <div class="container-medium">
     <div class="works__wrapper">
       <div class="works__left">
-
-        <div *ngFor="let work of works" [@cookieBanner]="work.title">
-          <projects-visual [work]="work"></projects-visual>
+        <div class="works__work-wrapper">
+          <div *ngFor="let work of works; let i = index">
+            <div [@workAnimation] *ngIf="isCurrentProject(i)">
+              <projects-visual [numberOfWork]="works.length" [index]="index" [work]="work">
+              </projects-visual>
+            </div>
+          </div>
         </div>
       </div>
 
       <div class="works__right">
-        <ng-container *ngFor="let work of works">
-          <projects-details [work]="work"></projects-details>
-        </ng-container>
+        <div class="works__item-wrapper">
+          <div class="works__list" *ngFor="let work of works; let i = index">
+            <div [@textAnimation] *ngIf="isCurrentProject(i)">
+              <projects-details [work]="work"></projects-details>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -19,8 +27,8 @@
   <div class="works__footer">
     <div class="container-medium">
       <div class="works__footer-content">
-        <cta-button textToDisplay="Prev" direction="left" (click)="testanime()"></cta-button>
-        <cta-button textToDisplay="Next" (click)="testanime()"></cta-button>
+        <cta-button textToDisplay="Prev" direction="left" (click)="previousProject(works.length)"></cta-button>
+        <cta-button textToDisplay="Next" (click)="nextProject(works.length)"></cta-button>
       </div>
     </div>
   </div>

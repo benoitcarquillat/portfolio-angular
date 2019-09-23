@@ -1,11 +1,14 @@
-<div class="projects-visual">
+<div class="projects-visual" *ngIf="work">
   <div class="projects-visual__image">
-    <img [src]="'assets/works/' + work.image" alt="projects-visual">
-
-    <div class="projects-visual__infos">
-      <project-counter></project-counter>
-      <h1 class="projects-visual__title"> {{ work.title }} </h1>
+    <div>
+      <img [src]="'assets/works/' + work.image" alt="projects-visual" />
     </div>
 
+    <div class="projects-visual__infos">
+      <project-counter [numberOfWork]="numberOfWork" [index]="index"></project-counter>
+      <div>
+        <h1 class="projects-visual__title">{{ work.title }}</h1>
+      </div>
+    </div>
   </div>
 </div>

@@ -1,25 +1,17 @@
-import { Action } from '@ngrx/store';
-import * as fromSharedModel from '@shared/models';
+import { createAction, props } from '@ngrx/store';
 
-export const enum WorksActionTypes {
-  LOAD_WORKS = '[Works] Load Works',
-  LOAD_WORKS_SUCCESS = '[Works] Load Works Success',
-  LOAD_WORKS_FAIL = '[Works] Load Works Fail'
-}
+import * as fromSharedModels from '@shared/models';
 
-export class LoadWorks implements Action {
-  readonly type = WorksActionTypes.LOAD_WORKS;
-}
-
-export class LoadWorksSuccess implements Action {
-  readonly type = WorksActionTypes.LOAD_WORKS_SUCCESS;
-  constructor(public payload: fromSharedModel.Work[]) {}
-}
-
-export class LoadWorksFail implements Action {
-  readonly type = WorksActionTypes.LOAD_WORKS_FAIL;
-  constructor(public payload: any) {}
-}
-
-// Action types
-export type WorksActions = LoadWorks | LoadWorksSuccess | LoadWorksFail;
+export const LoadWorks = createAction('[WORKS] Load work List');
+export const LoadWorksSuccess = createAction(
+  '[WORKS] Load work List Success',
+  props<{
+    worksList: fromSharedModels.Work[];
+  }>()
+);
+export const LoadWorksFail = createAction(
+  '[WORKS] Load work List Fail',
+  props<{
+    error: any;
+  }>()
+);

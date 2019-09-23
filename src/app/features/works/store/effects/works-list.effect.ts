@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
-import { catchError, switchMap, mergeMap } from 'rxjs/operators';
+import { catchError, switchMap, mergeMap, tap } from 'rxjs/operators';
 
-import { Effect, Actions, ofType } from '@ngrx/effects';
+import { Effect, Actions, ofType, createEffect } from '@ngrx/effects';
 
 import * as fromActions from '../actions';
 import * as fromServices from '../../services';
@@ -15,16 +15,19 @@ export class WorksListEffect {
     private worksService: fromServices.WorksService
   ) {}
 
-  @Effect()
-  Works$ = this.action$.pipe(
-    ofType<fromActions.LoadWorks>(fromActions.WorksActionTypes.LOAD_WORKS),
-    switchMap(() => {
-      return this.worksService.getWorks().pipe(
-        mergeMap((entities: fromSharedModel.Work[]) => [
-          new fromActions.LoadWorksSuccess(entities)
-        ]),
-        catchError(error => of(new fromActions.LoadWorksFail(error)))
-      );
-    })
+  loadWork$ = createEffect(() =>
+    this.action$.pipe(
+      ofType(fromActions.LoadWorks),
+      switchMap(() => {
+        return this.worksService.getWorks().pipe(
+          mergeMap((worksList: fromSharedModel.Work[]) => [
+            fromActions.LoadWorksSuccess({
+              worksList
+            })
+          ]),
+          catchError(error => of(fromActions.LoadWorksFail({ error })))
+        );
+      })
+    )
   );
 }
