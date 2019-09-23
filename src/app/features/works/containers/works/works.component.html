@@ -4,8 +4,8 @@
       <div class="works__left">
         <div class="works__work-wrapper">
           <div *ngFor="let work of works; let i = index">
-            <div [@workAnimation] *ngIf="isCurrentProject(i)">
-              <projects-visual [numberOfWork]="works.length" [index]="index" [work]="work">
+            <div [@workAnimation]="i" *ngIf="isCurrentProject(i)">
+              <projects-visual [numberOfWork]=" works.length" [workIndex]="i" [index]="index" [work]="work">
               </projects-visual>
             </div>
           </div>
@@ -15,7 +15,7 @@
       <div class="works__right">
         <div class="works__item-wrapper">
           <div class="works__list" *ngFor="let work of works; let i = index">
-            <div [@textAnimation] *ngIf="isCurrentProject(i)">
+            <div [@textAnimation]="i" *ngIf="isCurrentProject(i)">
               <projects-details [work]="work"></projects-details>
             </div>
           </div>

@@ -12,6 +12,7 @@ import * as fromAnimations from '../../animations';
 export class ProjectsVisualComponent implements OnInit {
   @Input() work: fromSharedModels.Work;
   @Input() index: number;
+  @Input() workIndex: number;
   @Input() numberOfWork: number;
 
   constructor() {}
