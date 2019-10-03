@@ -2,6 +2,7 @@
 
 .projects-visual {
   position: relative;
+  cursor: pointer;
 
   &__image {
     position: relative;
@@ -34,6 +35,12 @@
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+  }
+
+  &__title-wrapper {
+    overflow: hidden;
+    padding: 6px 0;
+    position: relative;
   }
 
   &__title {

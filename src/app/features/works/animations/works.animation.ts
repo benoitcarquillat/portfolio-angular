@@ -22,38 +22,61 @@ export const workAnimation = trigger('workAnimation', [
       { optional: true }
     ),
     group([
-      // block executes in parallel
       query(
         ':enter',
         [
-          style({ opacity: 0 }),
-          animate('1s ease-in-out', style({ opacity: 1 }))
+          group([
+            query('.projects-visual__image-wrapper', [
+              style({ opacity: 0, transform: 'translateY(-105%)' }),
+              animate(
+                '1000ms cubic-bezier(0.35, 0, 0.25, 1)',
+                style({ opacity: 1, transform: 'translateY(0)' })
+              )
+            ]),
+            query('.projects-visual__title', [
+              style({ transform: 'translateY(-110%)' }),
+              animate(
+                '700ms 200ms cubic-bezier(0.35, 0, 0.25, 1)',
+                style({ transform: 'translateY(0px)' })
+              )
+            ]),
+            query('.project-counter', [
+              style({ opacity: 0, transform: 'translateY(-40px)' }),
+              animate(
+                '500ms 500ms cubic-bezier(0.35, 0, 0.25, 1)',
+                style({ opacity: 1, transform: 'translateY(0px)' })
+              )
+            ])
+          ])
         ],
         { optional: true }
       ),
       query(
         ':leave',
         [
-          // query(
-          //   '.projects-visual',
-          //   [
-          //     style({ transform: 'translateX(-100%)' }),
-          //     animate(
-          //       '6000ms cubic-bezier(0.35, 0, 0.25, 1)',
-          //       style({ transform: 'translateX(0%)' })
-          //     )
-          //   ],
-          //   { optional: true }
-          // ),
-
-          query(
-            '.projects-visual__image-wrapper',
-            animate(1000, style({ opacity: 0 }))
-          ),
-          query('h1', animate(4000, style({ opacity: 0 })))
-
-          // style({ opacity: 1 }),
-          // animate('5s ease-in-out', style({ opacity: 0 }))
+          group([
+            query(
+              '.projects-visual__image-wrapper',
+              animate(
+                '1000ms cubic-bezier(0.35, 0, 0.25, 1)',
+                style({ opacity: 0, transform: 'translateY(150%)' })
+              )
+            ),
+            query(
+              '.projects-visual__title',
+              animate(
+                '500ms cubic-bezier(0.35, 0, 0.25, 1)',
+                style({ transform: 'translateY(105%)' })
+              )
+            ),
+            query('.project-counter', [
+              style({ opacity: 1, transform: 'translateY(0px)' }),
+              animate(
+                '500ms cubic-bezier(0.35, 0, 0.25, 1)',
+                style({ opacity: 0, transform: 'translateY(40px)' })
+              )
+            ])
+          ])
         ],
         { optional: true }
       )

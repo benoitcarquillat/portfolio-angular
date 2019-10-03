@@ -1,8 +1,7 @@
 @import 'src/stylesheets/settings/variables';
 
 .works {
-
-
+  $root: &;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -36,6 +35,12 @@
   &__item-wrapper {
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+
+    @media screen and (min-width: $medium) {
+      height: 250px;
+    }
   }
 
   &__work-wrapper {
@@ -56,5 +61,24 @@
   &__footer-content {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    background-color: $black;
+    transition: opacity 400ms ease-in-out;
+  }
+
+  &[data-state="isAnimated"] {
+    .works__overlay {
+      opacity: 0.5;
+    }
   }
 }

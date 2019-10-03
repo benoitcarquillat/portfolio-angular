@@ -5,7 +5,7 @@ import * as fromContainer from './containers';
 
 export const routes: Routes = [
   {
-    path: '404',
+    path: '',
     component: fromContainer.NotFoundComponent
   }
 ];

@@ -2,7 +2,9 @@
 
   <app-header></app-header>
 
-  <router-outlet #o="outlet">
-  </router-outlet>
+  <div [@routeAnimations]="prepareRoute(o)">
+    <router-outlet #o="outlet">
+    </router-outlet>
+  </div>
 
 </main>
