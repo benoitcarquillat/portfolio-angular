@@ -1,0 +1,58 @@
+@import 'src/stylesheets/settings/variables';
+
+.about {
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: column;
+    min-height: calc(100vh - #{$header-height-large} - #{$footer-height-large});
+  }
+
+  &__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__job {
+    font-family: $fontSerif;
+    font-weight: $fontbold;
+    font-size: 16px;
+    color: $grey_font;
+
+    @media screen and (min-width: $medium) {
+      font-size: 18px;
+    }
+
+    @media screen and (min-width: $large) {
+      font-size: 20px;
+    }
+  }
+
+  &__big-text {
+    font-family: $fontSerif;
+    font-weight: $fontbold;
+    font-size: 80px;
+    margin: 5px 0;
+
+    @media screen and (min-width: $medium) {
+      font-size: 100px;
+    }
+
+    @media screen and (min-width: $large) {
+      font-size: 130px;
+    }
+  }
+
+  &__content {
+    font-size: 18px;
+    line-height: 28px;
+    color: $grey_font;
+    font-size: 14px;
+
+    @media screen and (min-width: $large) {
+      font-size: 16px;
+    }
+  }
+}

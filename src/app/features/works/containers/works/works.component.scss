@@ -5,8 +5,10 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  margin-top: $header-height-small;
 
   @media screen and (min-width: $medium) {
+    margin-top: $header-height-large;
     height: calc(100vh - #{$header-height-large} - #{$footer-height-large});
   }
 

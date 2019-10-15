@@ -11,11 +11,10 @@ import * as fromSharedModels from '@shared/models';
 import * as fromModels from '../../models';
 import * as fromAnimations from '../../animations';
 
-import { fromEvent } from 'rxjs';
 import * as fromStore from '../../store';
 import { Store, select } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { filter, merge, tap, debounceTime } from 'rxjs/operators';
+import { merge, fromEvent, Observable } from 'rxjs';
+import { filter, tap, debounceTime, delay, take } from 'rxjs/operators';
 
 @Component({
   selector: 'works',
@@ -28,6 +27,7 @@ export class WorksComponent implements OnInit, AfterViewInit {
   @ViewChild('next', { static: false }) next: ElementRef;
   public works$: Observable<fromSharedModels.Work[]>;
   public index = 0;
+  public worksLength: number;
   public isAnimated = false;
 
   constructor(
@@ -60,35 +60,35 @@ export class WorksComponent implements OnInit, AfterViewInit {
     clickKeyPrev$
       .pipe(
         debounceTime(200),
-        tap(_ => this.previousProject(this.index))
+        tap(_ => this.previousProject())
       )
       .subscribe();
 
     clickKeyNext$
       .pipe(
         debounceTime(200),
-        tap(_ => this.nextProject(this.index))
+        tap(_ => this.nextProject())
       )
       .subscribe();
+    this.works$.subscribe(works => (this.worksLength = works.length));
   }
 
   public isCurrentProject(projectIndex: number): boolean {
     return this.index === projectIndex ? true : false;
   }
 
-  public nextProject(workLength: number): void {
+  public nextProject(): void {
     this.toogleAnimation();
-    this.index >= workLength - 1 ? (this.index = 0) : this.index++;
+    this.index <= 0 ? (this.index = this.worksLength - 1) : this.index--;
   }
-  public previousProject(workLength: number): void {
+
+  public previousProject(): void {
     this.toogleAnimation();
-    this.index <= 0 ? (this.index = workLength - 1) : this.index--;
+    this.index <= 0 ? (this.index = this.worksLength - 1) : this.index--;
   }
 
   private toogleAnimation() {
-    // const animationTriggered = fromEvent(document, 'click');
     this.isAnimated = this.isAnimated = true;
-    // @todo Debounce Rxjs
     setTimeout(() => (this.isAnimated = false), 500);
   }
 }

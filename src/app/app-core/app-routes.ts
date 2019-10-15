@@ -12,6 +12,14 @@ export const appRoutes: Routes = [
     }
   },
   {
+    path: 'about',
+    loadChildren: () =>
+      import('../features/about/about.module').then(m => m.AboutModule),
+    data: {
+      animation: 'about'
+    }
+  },
+  {
     path: 'error/404',
     loadChildren: () =>
       import('../features/error-pages/error-pages.module').then(

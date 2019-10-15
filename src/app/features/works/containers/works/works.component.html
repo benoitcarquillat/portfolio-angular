@@ -1,8 +1,4 @@
-<div
-  class="works"
-  *ngIf="works$ | async as works"
-  [attr.data-state]="isAnimated ? 'isAnimated' : ''"
->
+<div class="works" *ngIf="works$ | async as works" [attr.data-state]="isAnimated ? 'isAnimated' : ''">
   <div class="works__overlay"></div>
   <div class="container-medium">
     <div class="works__wrapper">
@@ -10,22 +6,21 @@
         <div class="works__work-wrapper">
           <div *ngFor="let work of works; let i = index">
             <div [@workAnimation]="i" *ngIf="isCurrentProject(i)">
-              <projects-visual
-                [numberOfWork]="works.length"
-                [index]="index"
-                [work]="work"
-              >
-              </projects-visual>
+              <a [routerLink]="['work', work.slug]">
+                <projects-visual [numberOfWork]="works.length" [index]="index" [work]="work">
+                </projects-visual>
+              </a>
             </div>
           </div>
         </div>
       </div>
-
       <div class="works__right">
         <div class="works__item-wrapper">
           <div class="works__list" *ngFor="let work of works; let i = index">
             <div [@textAnimation]="i" *ngIf="isCurrentProject(i)">
-              <projects-details [work]="work"></projects-details>
+              <a [routerLink]="['work', work.slug]">
+                <projects-details [work]="work"></projects-details>
+              </a>
             </div>
           </div>
         </div>
@@ -37,17 +32,10 @@
     <div class="container-medium">
       <div class="works__footer-content">
         <div #prev>
-          <cta-button
-            textToDisplay="Prev"
-            direction="left"
-            (click)="previousProject(works.length)"
-          ></cta-button>
+          <cta-button textToDisplay="Prev" direction="left"></cta-button>
         </div>
         <div #next>
-          <cta-button
-            textToDisplay="Next"
-            (click)="nextProject(works.length)"
-          ></cta-button>
+          <cta-button textToDisplay="Next"></cta-button>
         </div>
       </div>
     </div>

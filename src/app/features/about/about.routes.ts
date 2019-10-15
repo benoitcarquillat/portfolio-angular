@@ -6,14 +6,7 @@ import * as fromContainers from './containers';
 export const routes: Routes = [
   {
     path: '',
-    component: fromContainers.WorksComponent
-  },
-  {
-    path: 'work/:slug',
-    component: fromContainers.WorkComponent,
-    data: {
-      animation: 'SingleWork'
-    }
+    component: fromContainers.AboutUsComponent
   }
 ];
 
@@ -22,4 +15,4 @@ export const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class WorksRoutingModule {}
+export class AboutRoutingModule {}
