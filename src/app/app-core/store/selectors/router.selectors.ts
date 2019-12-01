@@ -34,3 +34,9 @@ export const getRouterStateDatas = createSelector(
   getRouterStateContent,
   (routerstate: fromModel.RouterStateCustom) => routerstate && routerstate.data
 );
+
+export const getRouterAnimationName = (id: string) =>
+  createSelector(
+    getRouterStateDatas,
+    data => data[id]
+  );

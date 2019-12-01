@@ -2,6 +2,13 @@
 
 .about {
 
+  margin-top: $header-height-small;
+
+  @media screen and (min-width: $medium) {
+    margin-top: $header-height-large;
+  }
+
+
   &__main {
     display: flex;
     align-items: center;

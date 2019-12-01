@@ -7,7 +7,8 @@
           <div *ngFor="let work of works; let i = index">
             <div [@workAnimation]="i" *ngIf="isCurrentProject(i)">
               <a [routerLink]="['work', work.slug]">
-                <projects-visual [numberOfWork]="works.length" [index]="index" [work]="work">
+                <projects-visual [currentAnimations$]="routeAnimation$" [numberOfWork]="works.length" [index]="index"
+                  [work]="work">
                 </projects-visual>
               </a>
             </div>

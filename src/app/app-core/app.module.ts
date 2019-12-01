@@ -34,17 +34,9 @@ export const metaReducers: MetaReducer<{}>[] = [];
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    SharedModule.forRoot(),
-    StoreModule.forRoot(
-      {},
-      {
-        metaReducers,
-        runtimeChecks: {
-          strictStateImmutability: true,
-          strictActionImmutability: true
-        }
-      }
-    ),
+    StoreRouterConnectingModule.forRoot(),
+    EffectsModule.forRoot(effects),
+    StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([]),
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 50 })

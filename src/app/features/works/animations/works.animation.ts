@@ -4,9 +4,7 @@ import {
   style,
   query,
   group,
-  animateChild,
-  animate,
-  state
+  animate
 } from '@angular/animations';
 
 export const workAnimation = trigger('workAnimation', [

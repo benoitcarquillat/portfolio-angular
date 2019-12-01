@@ -3,6 +3,11 @@
 .work {
   margin-top: 100vh;
 
+  .test {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
   &__banner {
     img {
       height: 100vh;
@@ -14,6 +19,16 @@
       z-index: -1;
       object-fit: cover;
 
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: block;
+        background-color: rgba(black, 0.4);
+      }
     }
   }
 }

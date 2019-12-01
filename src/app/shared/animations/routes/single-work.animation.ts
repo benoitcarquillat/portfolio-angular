@@ -30,23 +30,49 @@ export const SingleWorkAnimations = transition('HomePage => SingleWork', [
   ),
   query(':enter', [style({ opacity: 0 })], { optional: true }),
   group([
-    query(':enter', [animate('0ms 6000ms ease-out', style({ opacity: 1 }))], {
+    query(':enter', [animate('1ms 1200ms ease-out', style({ opacity: 1 }))], {
       optional: true
     }),
-    query(
-      ':leave',
+    query(':leave',
       [
         group([
           query(
             '.projects-visual__image-wrapper img',
             [
               style({}),
-              animate('6000ms cubic-bezier(0.35, 0, 0.25, 1)', style({}))
+              animate('1200ms cubic-bezier(0.35, 0, 0.25, 1)', style({}))
             ],
             { optional: true }
-          )
+          ),
+          query(
+            '.projects-visual__title',
+            animate(
+              '700ms cubic-bezier(0.35, 0, 0.25, 1)',
+              style({ transform: 'translateY(105%)' })
+            )
+          ),
+          query('.project-counter', [
+            style({ opacity: 1, transform: 'translateY(0px)' }),
+            animate(
+              '700ms 100ms cubic-bezier(0.35, 0, 0.25, 1)',
+              style({ opacity: 0, transform: 'translateY(40px)' })
+            )
+          ]),
+          query('.projects-details', [
+            style({ opacity: 1, transform: 'translateY(0px)' }),
+            animate(
+              '700ms cubic-bezier(0.35, 0, 0.25, 1)',
+              style({ opacity: 0, transform: 'translateY(100%)' })
+            )
+          ]),
+          query('.works__footer-content', [
+            style({ opacity: 1 }),
+            animate(
+              '300ms cubic-bezier(0.35, 0, 0.25, 1)',
+              style({ opacity: 0 })
+            )
+          ])
         ]),
-
         style({ opacity: 1 }),
         animate('0.5s ease-in-out', style({ opacity: 0 }))
       ],

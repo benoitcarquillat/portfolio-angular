@@ -12,6 +12,7 @@ import * as fromModels from '../../models';
 import * as fromAnimations from '../../animations';
 
 import * as fromStore from '../../store';
+import * as fromRootStore from '@root/store';
 import { Store, select } from '@ngrx/store';
 import { merge, fromEvent, Observable } from 'rxjs';
 import { filter, tap, debounceTime, delay, take } from 'rxjs/operators';
@@ -26,6 +27,7 @@ export class WorksComponent implements OnInit, AfterViewInit {
   @ViewChild('prev', { static: false }) prev: ElementRef;
   @ViewChild('next', { static: false }) next: ElementRef;
   public works$: Observable<fromSharedModels.Work[]>;
+  public routeAnimation$: Observable<string>;
   public index = 0;
   public worksLength: number;
   public isAnimated = false;
@@ -39,7 +41,9 @@ export class WorksComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     this.store.dispatch(fromStore.LoadWorks());
     this.works$ = this.store.pipe(select(fromStore.getAllWorksList));
-    // this.toogleAnimation();
+    this.routeAnimation$ = this.store.pipe(
+      select(fromRootStore.getRouterAnimationName('animation'))
+    );
   }
 
   ngAfterViewInit() {

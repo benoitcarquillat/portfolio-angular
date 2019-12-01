@@ -9,6 +9,8 @@ import {
 
 import * as fromSharedModels from '@shared/models';
 import * as fromAnimations from '../../animations';
+import { Observable } from 'rxjs';
+import { distinctUntilChanged, filter, tap, delay } from 'rxjs/operators';
 
 @Component({
   selector: 'projects-visual',
@@ -18,6 +20,7 @@ import * as fromAnimations from '../../animations';
 })
 export class ProjectsVisualComponent implements OnInit {
   @Input() work: fromSharedModels.Work;
+  @Input() currentAnimations$: Observable<string>;
   @Input() index: number;
   @Input() workIndex: number;
   @Input() numberOfWork: number;
@@ -31,7 +34,7 @@ export class ProjectsVisualComponent implements OnInit {
     this.renderer.setStyle(this.image.nativeElement, orientation, value + 'px');
   }
 
-  ngOnDestroy(): void {
+  private triggerLeaveAnimation() {
     let imagePosition: any = this.image.nativeElement.getBoundingClientRect();
     this.renderer.setStyle(this.image.nativeElement, 'position', 'fixed');
     this.setAnimatedImagePosition('top', imagePosition.top);
@@ -46,5 +49,16 @@ export class ProjectsVisualComponent implements OnInit {
         'true'
       );
     }, 100);
+  }
+
+  ngOnDestroy(): void {
+    this.currentAnimations$
+      .pipe(
+        filter((data: string) => data !== 'HomePage'),
+        distinctUntilChanged(),
+        delay(600),
+        tap(_ => this.triggerLeaveAnimation())
+      )
+      .subscribe();
   }
 }

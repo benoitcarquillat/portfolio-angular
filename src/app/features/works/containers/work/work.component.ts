@@ -13,17 +13,8 @@ import { map, debounceTime } from 'rxjs/operators';
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.scss']
 })
-export class WorkComponent implements OnInit, AfterViewInit {
-  @ViewChild('button', { static: false }) button: ElementRef;
+export class WorkComponent implements OnInit {
   constructor() {}
 
-  ngOnInit() {
-    // const source$ = fromEvent(document, 'click');
-    // source$.subscribe(x => console.log(x));
-  }
-
-  ngAfterViewInit() {
-    const buttonClicked$ = fromEvent(this.button.nativeElement, 'click');
-    buttonClicked$.pipe(debounceTime(500)).subscribe(x => console.log(x));
-  }
+  ngOnInit() {}
 }
