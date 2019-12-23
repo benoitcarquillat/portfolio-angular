@@ -4,7 +4,8 @@ import {
   Renderer2,
   ElementRef,
   ViewChild,
-  AfterViewInit
+  AfterViewInit,
+  OnDestroy
 } from '@angular/core';
 
 import * as fromSharedModels from '@shared/models';
@@ -23,7 +24,7 @@ import { filter, tap, debounceTime, delay, take } from 'rxjs/operators';
   styleUrls: ['./works.component.scss'],
   animations: [fromAnimations.textAnimation, fromAnimations.workAnimation]
 })
-export class WorksComponent implements OnInit, AfterViewInit {
+export class WorksComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild('prev', { static: false }) prev: ElementRef;
   @ViewChild('next', { static: false }) next: ElementRef;
   public works$: Observable<fromSharedModels.Work[]>;
@@ -36,7 +37,9 @@ export class WorksComponent implements OnInit, AfterViewInit {
     public store: Store<fromModels.WorksState>,
     private renderer: Renderer2,
     private el: ElementRef
-  ) {}
+  ) {
+    this.renderer.addClass(document.body, 'locked-for-slider');
+  }
 
   ngOnInit() {
     this.store.dispatch(fromStore.LoadWorks());
@@ -94,5 +97,9 @@ export class WorksComponent implements OnInit, AfterViewInit {
   private toogleAnimation() {
     this.isAnimated = this.isAnimated = true;
     setTimeout(() => (this.isAnimated = false), 500);
+  }
+
+  ngOnDestroy() {
+    this.renderer.removeClass(document.body, 'locked-for-slider');
   }
 }
