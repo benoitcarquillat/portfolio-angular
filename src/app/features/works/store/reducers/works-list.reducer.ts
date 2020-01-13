@@ -5,9 +5,15 @@ import * as fromActions from '../actions';
 import * as fromSharedModels from '@shared/models';
 import * as fromModel from '../../models';
 
+function customsId(filter: fromSharedModels.Work) {
+  return filter.slug;
+}
+
 export const adapter: EntityAdapter<
   fromSharedModels.Work
-> = createEntityAdapter<fromSharedModels.Work>({});
+> = createEntityAdapter<fromSharedModels.Work>({
+  selectId: customsId
+});
 
 export const initialState: fromModel.WorksListState = adapter.getInitialState({
   // additional entity state properties

@@ -1,24 +1,12 @@
-<div class="work">
-  <div class="work__banner">
-    <img src="assets/works/gagliardi/image.jpg" alt="banner">
+<div class="work" *ngIf="work$ | async as work">
+
+  <div class="container-medium">
+    <pre>
+      work : {{ work | json }}
+    </pre>
   </div>
 
-  <div class="test">
-    <h1> YOOOOLOOO </h1>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quidem illo enim necessitatibus corporis
-      voluptatibus! Facilis pariatur eos possimus deleniti aliquam blanditiis itaque dicta iste excepturi quo nostrum
-      dolorem sapiente culpa veniam nulla, ut perspiciatis sed totam. Expedita dicta sit repellendus, error consequuntur
-      excepturi delectus fuga accusamus culpa quos animi explicabo sed cumque illo sint vel, assumenda eveniet nam
-      nesciunt, aspernatur provident atque autem omnis dolor. Consequatur omnis ex autem voluptatem, quam nam dolorum
-      ipsa. Labore eos eum libero adipisci odio minus deleniti, animi assumenda quidem maxime perferendis sint provident
-      sunt. Voluptatum exercitationem fugiat nobis, voluptas aliquam maiores. Veniam, laboriosam! </p>
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias quidem illo enim necessitatibus corporis
-      voluptatibus! Facilis pariatur eos possimus deleniti aliquam blanditiis itaque dicta iste excepturi quo nostrum
-      dolorem sapiente culpa veniam nulla, ut perspiciatis sed totam. Expedita dicta sit repellendus, error consequuntur
-      excepturi delectus fuga accusamus culpa quos animi explicabo sed cumque illo sint vel, assumenda eveniet nam
-      nesciunt, aspernatur provident atque autem omnis dolor. Consequatur omnis ex autem voluptatem, quam nam dolorum
-      ipsa. Labore eos eum libero adipisci odio minus deleniti, animi assumenda quidem maxime perferendis sint provident
-      sunt. Voluptatum exercitationem fugiat nobis, voluptas aliquam maiores. Veniam, laboriosam! </p>
-    <button class="work__button" #button> click me ! </button>
+  <div class="work__banner">
+    <img src="assets/works/gagliardi/image.jpg" alt="banner">
   </div>
 </div>

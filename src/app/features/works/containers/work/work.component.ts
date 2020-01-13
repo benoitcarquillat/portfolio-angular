@@ -1,12 +1,14 @@
 import {
   Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  AfterViewInit
+  OnInit
 } from '@angular/core';
-import { fromEvent } from 'rxjs';
-import { map, debounceTime } from 'rxjs/operators';
+
+import * as fromSharedModels from '@shared/models';
+import * as fromModels from '../../models';
+
+import { Observable } from 'rxjs';
+import * as fromStore from '../../store';
+import { Store, select } from '@ngrx/store';
 
 @Component({
   selector: 'work',
@@ -14,7 +16,17 @@ import { map, debounceTime } from 'rxjs/operators';
   styleUrls: ['./work.component.scss']
 })
 export class WorkComponent implements OnInit {
-  constructor() {}
+  public work$: Observable<fromSharedModels.Work>;
 
-  ngOnInit() {}
+  constructor(
+    public store: Store<fromModels.WorksState>,
+  ) {}
+
+  ngOnInit() {
+    this.store.dispatch(fromStore.LoadWorks());
+
+    this.work$ = this.store.pipe(
+      select(fromStore.getWorkById(1))
+    );
+  }
 }

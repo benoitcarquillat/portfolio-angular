@@ -26,3 +26,9 @@ export const getProgramsListLoaded = createSelector(
   getWorksList,
   (state: fromModel.WorksListState): boolean => state && state.loaded
 );
+
+
+export const getWorkById = id => createSelector(
+  getAllWorksList,
+  works => works[id]
+);
