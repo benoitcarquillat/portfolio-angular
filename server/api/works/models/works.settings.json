@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "works",
+  "info": {
+    "name": "works"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Slider": {
+      "type": "component",
+      "repeatable": true,
+      "component": "works-slider.slider"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

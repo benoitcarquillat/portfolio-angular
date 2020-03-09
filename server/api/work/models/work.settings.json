@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "connection": "default",
+  "collectionName": "aboutus",
+  "info": {
+    "name": "About us"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "role": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "connection": "default",
+  "collectionName": "components_navigation_mon_composant_tests",
+  "info": {
+    "name": "mon composant test",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "contenu": {
+      "type": "string"
+    }
+  }
+}
