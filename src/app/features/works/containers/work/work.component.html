@@ -1,3 +1,12 @@
-<p>
-  work works!
-</p>
+<div class="work" *ngIf="work$ | async as work">
+
+  <div class="container-medium">
+    <pre>
+      work : {{ work | json }}
+    </pre>
+  </div>
+
+  <div class="work__banner">
+    <img src="assets/works/gagliardi/image.jpg" alt="banner">
+  </div>
+</div>

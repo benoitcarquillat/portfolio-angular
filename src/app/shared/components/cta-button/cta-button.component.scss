@@ -2,8 +2,11 @@
 
 .cta-button {
   font-weight: $fontbold;
+  $transition: 200ms;
+
   cursor: pointer;
   font-size: 14px;
+  transition: all $transition ease-in-out;
 
   @media screen and (min-width: $large) {
     font-size: 16px;
@@ -12,6 +15,7 @@
   svg {
     margin-right: 0px;
     margin-left: 10px;
+    transition: all $transition ease-in-out;
   }
 
   &[data-direction="left"] {
@@ -22,6 +26,21 @@
       margin-left: 0px;
       margin-right: 10px;
       transform: rotate(-180deg);
+    }
+  }
+
+  &:hover {
+    // transform: scale(1.1);
+
+    svg {
+      margin-left: 15px;
+    }
+
+    &[data-direction="left"] {
+      svg {
+        margin-left: 0px;
+        margin-right: 15px;
+      }
     }
   }
 }

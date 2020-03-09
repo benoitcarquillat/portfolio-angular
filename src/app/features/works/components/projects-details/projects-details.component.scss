@@ -1,6 +1,7 @@
 @import 'src/stylesheets/settings/variables';
 
 .projects-details {
+  cursor: pointer;
 
   &__title {
     font-weight: $fontbold;

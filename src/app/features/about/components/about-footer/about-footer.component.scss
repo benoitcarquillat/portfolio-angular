@@ -1,0 +1,28 @@
+@import 'src/stylesheets/settings/variables';
+
+.about-footer {
+  &__inner {
+    max-width: $container-medium;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: $header-height-large;
+
+    @media screen and (min-width: $medium) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 26px;
+    color: $grey_font;
+  }
+
+  &__value {
+    font-size: 14px;
+    line-height: 26px;
+    color: $white;
+  }
+}

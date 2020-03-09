@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
+import * as fromAnimation from '../../../shared/animations/routes';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +13,18 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
     './app-core.component.scss'
   ],
   encapsulation: ViewEncapsulation.None,
+  animations: [fromAnimation.RouteAnimations]
 })
 export class AppCoreComponent implements OnInit {
-
   constructor() {}
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  public prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData['animation']
+    );
   }
-
 }

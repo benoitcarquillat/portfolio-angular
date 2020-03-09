@@ -4,6 +4,9 @@
   height: $header-height-large;
   display: flex;
   align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 900;
 
   &__logo {
     font-weight: $fontbold;
@@ -41,5 +44,4 @@
   &__active-link {
     color: $white;
   }
-
 }

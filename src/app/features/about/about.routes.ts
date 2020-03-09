@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import * as fromContainer from './containers';
+import * as fromContainers from './containers';
 
 export const routes: Routes = [
   {
     path: '',
-    component: fromContainer.NotFoundComponent
+    component: fromContainers.AboutUsComponent
   }
 ];
 
@@ -15,4 +15,4 @@ export const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ErrorRoutingModule {}
+export class AboutRoutingModule {}

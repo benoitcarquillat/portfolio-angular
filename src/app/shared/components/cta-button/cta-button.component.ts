@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CtaButtonComponent implements OnInit {
   @Input() textToDisplay: string;
+  @Input() url: string;
   @Input() direction: 'left' | 'right';
 
   constructor() {}

@@ -5,11 +5,29 @@ import { Routes, RouterModule } from '@angular/router';
 export const appRoutes: Routes = [
   {
     path: '',
-    loadChildren: () => import('../features/works/works.module').then(m => m.WorksModule)
+    loadChildren: () =>
+      import('../features/works/works.module').then(m => m.WorksModule),
+    data: {
+      animation: 'HomePage'
+    }
+  },
+  {
+    path: 'about',
+    loadChildren: () =>
+      import('../features/about/about.module').then(m => m.AboutModule),
+    data: {
+      animation: 'about'
+    }
   },
   {
     path: 'error/404',
-    loadChildren: () => import('../features/error-pages/error-pages.module').then(m => m.ErrorPagesModule)
+    loadChildren: () =>
+      import('../features/error-pages/error-pages.module').then(
+        m => m.ErrorPagesModule
+      ),
+    data: {
+      animation: 'error'
+    }
   },
   {
     path: '**',

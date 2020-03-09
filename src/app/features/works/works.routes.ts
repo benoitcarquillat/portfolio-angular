@@ -10,7 +10,10 @@ export const routes: Routes = [
   },
   {
     path: 'work/:slug',
-    component: fromContainers.WorkComponent
+    component: fromContainers.WorkComponent,
+    data: {
+      animation: 'SingleWork'
+    }
   }
 ];
 
