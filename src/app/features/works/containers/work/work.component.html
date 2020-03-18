@@ -1,10 +1,16 @@
 <div class="work" *ngIf="work$ | async as work">
-
-  <div class="container-medium">
-
+  <div class="work__banner-wrapper">
+    <div class="work__banner">
+      <img [src]="api + work.image.url" alt="banner">
+      <div class="work__title-wrapper">
+        <div class="work__title">
+          {{ work.title }}
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="work__banner">
-    <img src="assets/works/gagliardi/image.jpg" alt="banner">
+  <div class="container-medium work__content">
+    {{ work | json }}
   </div>
 </div>

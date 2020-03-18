@@ -1,4 +1,3 @@
-import { ElementRef } from '@angular/core';
 import {
   trigger,
   transition,
@@ -9,10 +8,6 @@ import {
   animate,
   state
 } from '@angular/animations';
-
-// var banner = document.getElementById('animated-image');
-// let bannerPosition = banner.getBoundingClientRect();
-// console.log(bannerPosition);
 
 export const SingleWorkAnimations = transition('HomePage => SingleWork', [
   style({ position: 'relative' }),
@@ -33,7 +28,23 @@ export const SingleWorkAnimations = transition('HomePage => SingleWork', [
     query(':enter', [animate('1ms 1200ms ease-out', style({ opacity: 1 }))], {
       optional: true
     }),
-    query(':leave',
+
+    // animation for the single page
+    query(':enter', [
+      group([
+        query('.work__title', [
+          style({ transform: 'translateY(-100%)', opacity: 0 }),
+          animate(
+            '1200ms 1000ms cubic-bezier(0.35, 0, 0.25, 1)',
+            style({ transform: 'translateY(0%)', opacity: 1 })
+          )
+        ])
+      ])
+    ]),
+
+    // Animation for the page leave (works)
+    query(
+      ':leave',
       [
         group([
           query(
