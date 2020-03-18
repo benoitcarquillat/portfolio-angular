@@ -1,19 +1,13 @@
 {
-  "kind": "singleType",
   "connection": "default",
-  "collectionName": "aboutus",
+  "collectionName": "components_works_slider_works",
   "info": {
-    "name": "About us"
+    "name": "slider-works",
+    "icon": "laptop-medical"
   },
-  "options": {
-    "increments": true,
-    "timestamps": true
-  },
+  "options": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "subtitle": {
       "type": "string"
     },
     "image": {
@@ -22,14 +16,17 @@
       "plugin": "upload",
       "required": false
     },
+    "subtitle": {
+      "type": "string"
+    },
     "role": {
       "type": "string"
     },
     "slug": {
       "type": "string"
     },
-    "order": {
-      "type": "integer"
+    "content": {
+      "type": "text"
     }
   }
 }

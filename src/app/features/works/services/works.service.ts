@@ -16,7 +16,7 @@ export class WorksService {
   constructor(private http: HttpClient) {}
 
   public getWorks() {
-    const endpoint = `${environment.dockerApi}/project`;
+    const endpoint = `${environment.dockerApi}/works`;
 
     return this.http.get<fromSharedModel.Work[]>(endpoint).pipe(
       map((datas: fromSharedModel.Work[]) => {

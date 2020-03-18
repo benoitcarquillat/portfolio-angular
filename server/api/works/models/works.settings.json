@@ -10,12 +10,25 @@
     "timestamps": true
   },
   "attributes": {
-    "Slider": {
-      "type": "component",
-      "repeatable": true,
-      "component": "works-slider.slider"
-    },
     "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "slug": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "role": {
       "type": "string"
     }
   }

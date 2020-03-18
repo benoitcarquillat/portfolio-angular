@@ -12,10 +12,7 @@ export const getWorksList = createSelector(
   (state: fromModel.WorksState) => state && state.worksList
 );
 
-export const getAllWorksList = createSelector(
-  getWorksList,
-  selectAll
-);
+export const getAllWorksList = createSelector(getWorksList, selectAll);
 
 export const getProgramsListLoading = createSelector(
   getWorksList,
@@ -27,8 +24,8 @@ export const getProgramsListLoaded = createSelector(
   (state: fromModel.WorksListState): boolean => state && state.loaded
 );
 
-
-export const getWorkById = id => createSelector(
-  getAllWorksList,
-  works => works[id]
-);
+export const getWorkBySlug = (slug: string) =>
+  createSelector(getAllWorksList, works => {
+    let result = works.find(work => work.slug === slug);
+    return result;
+  });

@@ -7,6 +7,7 @@ import {
   Renderer2
 } from '@angular/core';
 
+import { environment } from '@environments/environment';
 import * as fromSharedModels from '@shared/models';
 import * as fromAnimations from '../../animations';
 import { Observable } from 'rxjs';
@@ -25,6 +26,7 @@ export class ProjectsVisualComponent implements OnInit {
   @Input() workIndex: number;
   @Input() numberOfWork: number;
   @ViewChild('image', { static: false }) image: ElementRef;
+  public api = environment.dockerApi;
 
   constructor(private renderer: Renderer2) {}
 
