@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { isWorksLoaded } from './guards/isWorksLoaded.guard';
 
 import * as fromContainers from './containers';
 
@@ -11,6 +12,7 @@ export const routes: Routes = [
   {
     path: 'work/:slug',
     component: fromContainers.WorkComponent,
+    canActivate: [isWorksLoaded],
     data: {
       animation: 'SingleWork'
     }

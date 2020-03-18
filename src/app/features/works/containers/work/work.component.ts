@@ -18,8 +18,6 @@ export class WorkComponent implements OnInit {
   constructor(public store: Store<fromModels.WorksState>) {}
 
   ngOnInit() {
-    this.store.dispatch(fromStore.LoadWorks());
     this.work$ = this.store.pipe(select(fromStore.getWorkBySlug('gagliardi')));
-    this.work$.subscribe(x => console.log(x));
   }
 }
