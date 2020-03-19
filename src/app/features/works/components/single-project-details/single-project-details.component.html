@@ -1,0 +1,46 @@
+<div class="single-project-details" *ngIf="data">
+    <div class="single-project-details__title">
+        <h1>
+            {{ data.sectionTitle }}
+        </h1>
+    </div>
+    <div class="single-project-details__wrapper">
+        <div class="single-project-details__left">
+            <h2 class="single-project-details__content">
+                {{content}}
+            </h2>
+        </div>
+        <div class="single-project-details__right">
+            <!-- section @todo: component -->
+            <div class="single-project-details__technos-wrapper single-project-details__section-wrapper">
+                <div class="single-project-details__techno-title single-project-details__tag-title">
+                    Technologies:
+                </div>
+                <div class="single-project-details__technos single-project-details__label" *ngFor="let techno of data.technology">
+                    <span>{{ techno.label}}</span>
+                </div>
+            </div>
+            <!-- end section -->
+            <!-- section @todo: component -->
+            <div class="single-project-details__technos-wrapper single-project-details__section-wrapper">
+                <div class="single-project-details__techno-title single-project-details__tag-title">
+                    Year:
+                </div>
+                <div class="single-project-details__technos single-project-details__label">
+                    <span>{{ data.year}}</span>
+                </div>
+            </div>
+            <!-- end section -->
+            <!-- section @todo: component -->
+            <div class="single-project-details__technos-wrapper single-project-details__section-wrapper">
+                <div class="single-project-details__techno-title single-project-details__tag-title">
+                    Role:
+                </div>
+                <div class="single-project-details__technos single-project-details__label" *ngFor="let role of data.role">
+                    <span>{{ role.label}}</span>
+                </div>
+            </div>
+            <!-- end section -->
+        </div>
+    </div>
+</div>

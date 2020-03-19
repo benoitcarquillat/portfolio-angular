@@ -1,0 +1,14 @@
+{
+  "connection": "default",
+  "collectionName": "components_tag_roles",
+  "info": {
+    "name": "role",
+    "icon": "graduation-cap"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

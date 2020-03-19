@@ -11,7 +11,7 @@ import { ServicesModuleModule } from './services/services-module.module';
 import { StoreModule, ActionReducerMap } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, effects } from './store';
-
+import { NgxParallaxModule } from '@yoozly/ngx-parallax';
 import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
@@ -21,6 +21,7 @@ import { SharedModule } from '../../shared/shared.module';
     WorksRoutingModule,
     SharedModule,
     ServicesModuleModule,
+    NgxParallaxModule,
     StoreModule.forFeature('works', reducers),
     EffectsModule.forFeature(effects)
   ],

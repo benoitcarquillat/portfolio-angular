@@ -30,6 +30,11 @@
     },
     "role": {
       "type": "string"
+    },
+    "singleWork": {
+      "type": "component",
+      "repeatable": false,
+      "component": "single-work.single-work"
     }
   }
 }

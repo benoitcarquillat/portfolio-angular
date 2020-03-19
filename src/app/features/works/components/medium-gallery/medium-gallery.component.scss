@@ -1,0 +1,25 @@
+@import 'src/stylesheets/settings/variables';
+
+.medium-gallery {
+    max-width: 950px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    &__title {
+        color: $grey_font;
+        font-size: 14px;
+        margin-bottom: 40px;
+        span {
+            font-weight: bold;
+            font-size: 36px;
+            color: white;
+        }
+    }
+
+    &__images {
+        img {
+            width: 100%;
+            margin-bottom: 80px;
+        }
+    }
+}

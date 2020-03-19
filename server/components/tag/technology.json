@@ -1,0 +1,14 @@
+{
+  "connection": "default",
+  "collectionName": "components_tag_technologies",
+  "info": {
+    "name": "technology",
+    "icon": "code"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    }
+  }
+}

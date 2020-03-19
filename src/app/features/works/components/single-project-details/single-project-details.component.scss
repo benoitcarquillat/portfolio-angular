@@ -1,0 +1,54 @@
+@import 'src/stylesheets/settings/variables';
+
+.single-project-details {
+    &__title {
+        font-size: 36px;
+        font-weight: $fontbold;
+        padding-bottom: 30px;
+    }
+
+    &__content {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    &__wrapper {
+        color: $grey_font;
+        
+        @media screen and (min-width: $medium) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__left, &__right {
+        flex-basis: calc(50% - 40px);
+    }
+
+    &__label {
+        color: white;
+        font-weight: $fontbold;
+
+        &::after {
+            content: ",";
+            margin-right: 5px;
+        }
+
+        &:last-child {
+            &::after {
+                content: "";
+            }
+        }
+    }
+
+    &__section-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    &__tag-title {
+        margin-right: 5px;
+    }
+}

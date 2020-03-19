@@ -1,16 +1,23 @@
 <div class="work" *ngIf="work$ | async as work">
   <div class="work__banner-wrapper">
     <div class="work__banner">
-      <img [src]="api + work.image.url" alt="banner">
+      <img [src]="api + work.image.url" alt="banner" ngx-parallax>
       <div class="work__title-wrapper">
         <div class="work__title">
           {{ work.title }}
         </div>
       </div>
     </div>
+    <div class="work__scroll-down">
+      <scroll-down></scroll-down>
+    </div>
   </div>
 
   <div class="container-medium work__content">
-    {{ work | json }}
+    <single-project-details [data]="work.singleWork" [content]="work.content"></single-project-details>
+  </div>
+  <skew-gallery></skew-gallery>
+  <div class="work__section-component">
+      <medium-gallery></medium-gallery>
   </div>
 </div>

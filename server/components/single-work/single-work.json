@@ -1,0 +1,27 @@
+{
+  "connection": "default",
+  "collectionName": "components_single_work_single_works",
+  "info": {
+    "name": "single-work",
+    "icon": "atom"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "technology": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tag.technology"
+    },
+    "role": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tag.role"
+    },
+    "year": {
+      "type": "integer"
+    }
+  }
+}

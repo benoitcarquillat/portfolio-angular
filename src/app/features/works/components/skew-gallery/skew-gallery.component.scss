@@ -1,0 +1,26 @@
+.skew-gallery {
+    overflow: hidden;
+    padding: 150px 0 0;
+
+    &__wrapper {
+        display: flex;
+        transform: rotate3d(2, 1, 1, -60deg);
+        transform: perspective(400px) rotateY(0deg) rotateX(8deg) rotateZ(-25deg);
+        width: 125vw;
+        margin-left: -5vw;
+    }
+
+    &__column {
+        margin: 0 20px;
+        flex-basis: 33.33%;
+        &--two {
+            margin-top: -200px;
+        }
+    }
+    img {
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 40px;
+
+    }
+}

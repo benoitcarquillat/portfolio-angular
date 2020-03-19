@@ -1,0 +1,25 @@
+@import 'src/stylesheets/settings/variables';
+
+.scroll-down {
+    color: white;
+    transform: rotate(-90deg) translateX(50%);
+    display: inline-block;
+    padding: 10px 0; 
+    position: relative;
+    z-index: 9;
+    &::before {
+        content: "";
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 0px;
+        left: -20px;
+    }
+
+    &__label {
+        padding-left: 40px;
+        font-family: $fontSerif;
+    }
+}
