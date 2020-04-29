@@ -4,6 +4,7 @@ import { ProjectCounterComponent } from './project-counter/project-counter.compo
 import { SingleProjectDetailsComponent } from './single-project-details/single-project-details.component';
 import { SkewGalleryComponent } from './skew-gallery/skew-gallery.component';
 import { MediumGalleryComponent } from './medium-gallery/medium-gallery.component';
+import { WorkFooterComponent } from './work-footer/work-footer.component';
 
 export const components: any[] = [
   ProjectsDetailsComponent,
@@ -11,7 +12,8 @@ export const components: any[] = [
   ProjectCounterComponent,
   SingleProjectDetailsComponent,
   SkewGalleryComponent,
-  MediumGalleryComponent
+  MediumGalleryComponent,
+  WorkFooterComponent
 ];
 
 export * from './projects-details/projects-details.component';
@@ -20,3 +22,4 @@ export * from './project-counter/project-counter.component';
 export * from './single-project-details/single-project-details.component';
 export * from './skew-gallery/skew-gallery.component';
 export * from './medium-gallery/medium-gallery.component';
+export * from './work-footer/work-footer.component';

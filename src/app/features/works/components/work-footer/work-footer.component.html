@@ -1,0 +1,17 @@
+<div class="work-footer" >
+    <div class="container-medium">
+        <div class="work-footer__wrapper">
+            <div class="work-footer__left">
+                <cta-button url="about" textToDisplay="Contact me :-)"></cta-button>
+            </div>
+            <div class="work-footer__right">
+                <cta-button       
+                    (changeUrl)="handleUrlClick($event)"
+                    textToDisplay="Next project"
+                    [url]="'work/' + nextProject.slug"
+                    ></cta-button>
+                    <!-- [disableLink]="true" -->
+            </div>
+        </div>
+    </div>
+</div>

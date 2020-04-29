@@ -2,6 +2,7 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 
 import * as fromRouter from '@ngrx/router-store';
 import * as fromModel from '../../models';
+import { Params } from '@angular/router';
 
 export const getRouterState = createFeatureSelector<
   fromRouter.RouterReducerState<fromModel.RouterStateCustom>
@@ -24,6 +25,11 @@ export const getRouterStateParams = createSelector(
     routerstate && routerstate.params
 );
 
+export const getRouterStateParamsSlug = createSelector(
+  getRouterStateParams,
+  (routerstate: Params) => routerstate && routerstate.slug
+);
+
 export const getRouterStateQueryParams = createSelector(
   getRouterStateContent,
   (routerstate: fromModel.RouterStateCustom) =>
@@ -36,7 +42,4 @@ export const getRouterStateDatas = createSelector(
 );
 
 export const getRouterAnimationName = (id: string) =>
-  createSelector(
-    getRouterStateDatas,
-    data => data[id]
-  );
+  createSelector(getRouterStateDatas, data => data[id]);

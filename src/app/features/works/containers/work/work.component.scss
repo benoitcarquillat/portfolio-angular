@@ -70,4 +70,16 @@
   &__section-component {
     padding: 130px 0 100px;
   }
+
+  .overlay {
+    background-color: white;
+    position: fixed;
+    z-index: 900;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    transition: transform cubic-bezier(0.35, 0, 0.25, 1) 500ms ;
+  }
 }

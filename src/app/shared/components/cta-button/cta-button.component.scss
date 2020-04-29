@@ -3,6 +3,9 @@
 .cta-button {
   font-weight: $fontbold;
   $transition: 200ms;
+  color: white;
+  background-color: transparent;
+  border: none;
 
   cursor: pointer;
   font-size: 14px;

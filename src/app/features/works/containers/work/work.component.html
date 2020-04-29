@@ -20,4 +20,8 @@
   <div class="work__section-component">
       <medium-gallery></medium-gallery>
   </div>
+
+  <work-footer (clicked)="handleCtaClicked($event)" [nextProject]="nextProject$ | async"></work-footer>
+
+  <div class="overlay" #overlay></div>
 </div>
