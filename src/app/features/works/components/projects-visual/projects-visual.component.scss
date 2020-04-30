@@ -50,17 +50,16 @@
 
   &__title-wrapper {
     overflow: hidden;
-    padding: 6px 0;
+    padding: 4px 0;
     position: relative;
+    @media screen and (min-width: $medium) {
+      padding: 6px 0;
+    }
   }
 
   &__title {
     font-family: $fontSerif;
     font-size: 8vw;
     word-break: initial;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translateX(-50%) translateY(-50%);
   }
 }

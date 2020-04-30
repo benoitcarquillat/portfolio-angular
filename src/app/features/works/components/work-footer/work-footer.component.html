@@ -8,6 +8,7 @@
                 <cta-button       
                     (changeUrl)="handleUrlClick($event)"
                     textToDisplay="Next project"
+                    [disableLink]="true"
                     [url]="'work/' + nextProject.slug"
                     ></cta-button>
                     <!-- [disableLink]="true" -->

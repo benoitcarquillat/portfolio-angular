@@ -32,9 +32,9 @@ export const workAnimation = trigger('workAnimation', [
               )
             ]),
             query('.projects-visual__title', [
-              style({ transform: 'translateY(-110%)' }),
+              style({ transform: 'translateY(-115%)' }),
               animate(
-                '700ms 200ms cubic-bezier(0.35, 0, 0.25, 1)',
+                '800ms 200ms cubic-bezier(0.35, 0, 0.25, 1)',
                 style({ transform: 'translateY(0px)' })
               )
             ]),

@@ -2,14 +2,32 @@
 
 .single-project-details {
     &__title {
-        font-size: 36px;
+        font-size: 22px;
         font-weight: $fontbold;
         padding-bottom: 30px;
+        @media screen and (min-width: $medium) {
+            font-size: 36px; 
+        }
     }
 
     &__content {
-        font-size: 18px;
+        font-size: 14px;
         line-height: 1.6;
+        margin-bottom: 20px;
+        @media screen and (min-width: $medium) {
+            margin-bottom: 0px;
+            font-size: 18px;
+        }
+    }
+
+    &__right {
+        font-size: 14px;
+        margin-bottom: 20px;
+
+        @media screen and (min-width: $medium) {
+            font-size: 18px;
+            margin-bottom: 0px;
+        }
     }
 
     &__wrapper {
