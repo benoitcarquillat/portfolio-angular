@@ -51,12 +51,12 @@
     "sanitize.css": "^8.0.0",
     "start-server-and-test": "^1.7.11",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "@angular/cli": "~8.3.1",
+    "@angular/compiler-cli": "~8.2.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.1",
-    "@angular/cli": "~8.3.1",
-    "@angular/compiler-cli": "~8.2.4",
     "@angular/language-service": "~8.2.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
