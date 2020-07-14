@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "title": "Gagliardi",
+    "subtitle": "Two months in Malta",
+    "slug": "gagliardi",
+    "content": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
+    "role": "Designer",
+    "singleWork": {
+      "id": 1,
+      "sectionTitle": "Designer in Malta",
+      "year": 2017,
+      "technology": [{
+          "id": 1,
+          "label": "Photoshop"
+        },
+        {
+          "id": 2,
+          "label": "Illustrator"
+        }
+      ],
+      "role": [{
+        "id": 1,
+        "label": "Developer"
+      }]
+    },
+    "image": {
+      "id": 1,
+      "name": "image.jpg",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "size": 134.69,
+      "url": "assets/works/gagliardi/image.jpg"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Yoozly",
+    "subtitle": "1 year in Lille",
+    "slug": "yoozly",
+    "content": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
+    "role": "Front-end developer",
+    "singleWork": {
+      "id": 1,
+      "sectionTitle": "Designer in Malta",
+      "year": 2017,
+      "technology": [{
+          "id": 1,
+          "label": "Photoshop"
+        },
+        {
+          "id": 2,
+          "label": "Illustrator"
+        }
+      ],
+      "role": [{
+        "id": 1,
+        "label": "Developer"
+      }]
+    },
+    "image": {
+      "id": 2,
+      "name": "image.jpg",
+      "ext": ".jpg",
+      "mime": "image/jpeg",
+      "url": "assets/works/yoozly/image.jpg"
+    }
+  }
+]

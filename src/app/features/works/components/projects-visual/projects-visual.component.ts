@@ -26,7 +26,6 @@ export class ProjectsVisualComponent implements OnInit {
   @Input() workIndex: number;
   @Input() numberOfWork: number;
   @ViewChild('image', { static: false }) image: ElementRef;
-  public api = environment.dockerApi;
 
   constructor(private renderer: Renderer2) {}
 

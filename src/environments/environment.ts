@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  dockerApi: 'http://localhost:1337'
+  // dockerApi: 'http://localhost:1337'
+  dockerApi: 'assets/api.json'
 };
 
 /*

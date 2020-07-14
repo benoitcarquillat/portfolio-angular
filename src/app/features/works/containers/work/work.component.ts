@@ -27,7 +27,6 @@ import { map } from 'rxjs/operators';
 export class WorkComponent implements OnInit {
   public work$: Observable<fromSharedModels.Work>;
   public nextProject$: Observable<fromSharedModels.Work>;
-  public api = environment.dockerApi;
   private isWorkLoaded = false;
   @ViewChild('overlay', { static: false }) overlay: ElementRef;
   @ViewChild('work', { static: false }) work: ElementRef;
