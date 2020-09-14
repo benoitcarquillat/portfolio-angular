@@ -86,12 +86,20 @@ export class WorksComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public nextProject(): void {
     this.toogleAnimation();
-    this.index <= 0 ? (this.index = this.worksLength - 1) : this.index--;
+    if(this.index >= this.worksLength - 1) {
+      this.index = 0
+    } else {
+      this.index++;
+    }
   }
 
   public previousProject(): void {
     this.toogleAnimation();
-    this.index <= 0 ? (this.index = this.worksLength - 1) : this.index--;
+    if(this.index <= 0) {
+      this.index = this.worksLength - 1;
+    } else {
+      this.index--;
+    }
   }
 
   private toogleAnimation() {

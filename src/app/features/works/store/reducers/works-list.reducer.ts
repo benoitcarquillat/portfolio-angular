@@ -6,7 +6,7 @@ import * as fromSharedModels from '@shared/models';
 import * as fromModel from '../../models';
 
 function customsId(filter: fromSharedModels.Work) {
-  return filter.slug;
+  return filter.id;
 }
 
 export const adapter: EntityAdapter<
