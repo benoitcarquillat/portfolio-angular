@@ -4,9 +4,9 @@
             <span> Gallery </span>3 images
         </div>
         <div class="medium-gallery__images">
-            <img data-zoomable src="https://images.unsplash.com/photo-1584605376366-63f17a36e99e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
-            <img data-zoomable src="https://images.unsplash.com/photo-1583307573996-6e7d484919a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1105&q=80" alt="">
-            <img data-zoomable src="https://images.unsplash.com/photo-1584543738381-0ee650a7bcaf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1952&q=80" alt="">
+            <ng-container *ngFor="let image of gallery">
+                <img data-zoomable [src]="image.src" [alt]="image.alt">
+            </ng-container>
         </div>
     </div>
 </div>

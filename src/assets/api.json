@@ -1,49 +1,84 @@
 [
   {
     "id": 1,
-    "title": "Gagliardi",
-    "subtitle": "Two months in Malta",
-    "slug": "gagliardi",
-    "content": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
-    "role": "Designer",
+    "title": "Yoozly",
+    "subtitle": "Angular developer",
+    "slug": "yoozly",
+    "content": "I worked for Yoozly as a front-end developer. I had the opportunity to develop several websites. I learned to think reactively & to build modern interfaces.",
+    "role": "Front-end developer",
     "singleWork": {
       "id": 1,
-      "sectionTitle": "Designer in Malta",
-      "year": 2017,
+      "sectionTitle": "One year in a web agency",
+      "year": "2018/2019",
       "technology": [{
           "id": 1,
-          "label": "Photoshop"
+          "label": "Angular"
         },
         {
           "id": 2,
-          "label": "Illustrator"
+          "label": "Ngrx"
+        },
+        {
+          "id": 3,
+          "label": "Rxjs"
+        },
+        {
+          "id": 4,
+          "label": "Redux"
         }
       ],
       "role": [{
         "id": 1,
         "label": "Developer"
-      }]
+      }],
+      "skewGallery": {
+        "columnOne": [
+          {
+            "src": "assets/works/yoozly/single/salti-home.jpg",
+            "alt": ""
+          },
+          {
+            "src": "assets/works/yoozly/single/yoozly-real.jpg",
+            "alt": ""
+          }
+        ],
+        "columnTwo": [
+          {
+            "src": "assets/works/yoozly/single/salti-all.jpg",
+            "alt": ""
+          },
+          {
+            "src": "assets/works/yoozly/single/pom.jpg",
+            "alt": ""
+          }
+        ],
+        "columnThree": [
+          {
+            "src": "assets/works/yoozly/single/louvre.jpg",
+            "alt": ""
+          },
+          {
+            "src": "assets/works/yoozly/single/yoozly-home.jpg",
+            "alt": ""
+          }
+        ]
+      }
     },
     "image": {
-      "id": 1,
-      "name": "image.jpg",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "size": 134.69,
-      "url": "assets/works/gagliardi/image.jpg"
+      "url": "assets/works/yoozly/yoozly.jpg"
     }
   },
   {
     "id": 2,
-    "title": "Yoozly",
-    "subtitle": "1 year in Lille",
-    "slug": "yoozly",
-    "content": "Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum ",
-    "role": "Front-end developer",
+    "title": "Gagliardi",
+    "subtitle": "Designer in Malta",
+    "slug": "gagliardi",
+    "content": "I made a traineeship in Malta for my studies, it was a really great experience and help me to improve my english skills. During this period I was able to work on photo editing, the seasons catalog for the brand (autumn/winter 2017 & spring/summer 2018).",
+    "role": "Designer",
     "singleWork": {
       "id": 1,
-      "sectionTitle": "Designer in Malta",
-      "year": 2017,
+      "sectionTitle": "Three months in Malta as a designer",
+      "year": "2017",
       "technology": [{
           "id": 1,
           "label": "Photoshop"
@@ -51,6 +86,57 @@
         {
           "id": 2,
           "label": "Illustrator"
+        },
+        {
+          "id": 3,
+          "label": "InDesign"
+        },
+        {
+          "id": 4,
+          "label": "Figma"
+        }
+      ],
+      "role": [{
+        "id": 1,
+        "label": "Designer"
+      }],
+      "mediumGallery": [
+        {
+          "src": "assets/works/gagliardi/single/catalog.png",
+          "alt": ""
+        },
+        {
+          "src": "assets/works/gagliardi/single/editing.png",
+          "alt": ""
+        },
+        {
+          "src": "assets/works/gagliardi/single/webdesign.jpg",
+          "alt": ""
+        }
+      ]
+    },
+    "image": {
+      "url": "assets/works/gagliardi/gagliardi.jpg"
+    }
+  },
+  {
+    "id": 3,
+    "title": "Capgemini",
+    "subtitle": "Front-end developer",
+    "slug": "capgemini",
+    "content": "I'm currently working for Capgemini as a Front-end developer where i'm on a project for l'Oréal. In this project we develop functionalities in vanilla Js and I have to integrate the new designs.",
+    "role": "Front-end developer",
+    "singleWork": {
+      "id": 1,
+      "sectionTitle": "Working for Capgemini",
+      "year": "2020",
+      "technology": [{
+          "id": 1,
+          "label": "Vanilla Js"
+        },
+        {
+          "id": 2,
+          "label": "Scss"
         }
       ],
       "role": [{
@@ -59,11 +145,7 @@
       }]
     },
     "image": {
-      "id": 2,
-      "name": "image.jpg",
-      "ext": ".jpg",
-      "mime": "image/jpeg",
-      "url": "assets/works/yoozly/image.jpg"
+      "url": "assets/works/capgemini/capgemini.jpg"
     }
   }
 ]

@@ -17,9 +17,9 @@
     <div class="container-medium work__content">
       <single-project-details [data]="work.singleWork" [content]="work.content"></single-project-details>
     </div>
-    <skew-gallery></skew-gallery>
-    <div class="work__section-component">
-        <medium-gallery></medium-gallery>
+    <skew-gallery *ngIf="work.singleWork.skewGallery" [gallery]="work.singleWork.skewGallery"></skew-gallery>
+    <div class="work__section-component" *ngIf="work.singleWork.mediumGallery"> 
+        <medium-gallery [gallery]="work.singleWork.mediumGallery"></medium-gallery>
     </div>
 
     <work-footer (clicked)="handleCtaClicked($event)" [nextProject]="nextProject$ | async"></work-footer>

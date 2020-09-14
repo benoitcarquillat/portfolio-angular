@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import mediumZoom from 'medium-zoom';
 
 @Component({
@@ -6,10 +6,11 @@ import mediumZoom from 'medium-zoom';
   templateUrl: './medium-gallery.component.html',
   styleUrls: ['./medium-gallery.component.scss']
 })
-export class MediumGalleryComponent implements OnInit {
+export class MediumGalleryComponent implements AfterViewInit {
+  @Input() gallery: any;
   constructor() {}
 
-  ngOnInit() {
+  ngAfterViewInit() {
     mediumZoom('[data-zoomable]', {
       margin: 24,
       background: 'black'

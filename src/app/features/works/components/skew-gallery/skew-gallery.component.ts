@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'skew-gallery',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skew-gallery.component.scss']
 })
 export class SkewGalleryComponent implements OnInit {
+  @Input() gallery: any;
   constructor() {}
 
   ngOnInit() {}
