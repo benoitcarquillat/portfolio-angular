@@ -13,6 +13,8 @@ import { environment } from '../../environments/environment';
 
 import * as fromModels from './models';
 import { reducers, effects, CustomSerializer } from './store';
+import { NgxCursorModule } from 'ngx-cursor';
+
 
 import {
   StoreRouterConnectingModule,
@@ -37,6 +39,7 @@ export const metaReducers: MetaReducer<{}>[] = [];
     StoreRouterConnectingModule.forRoot(),
     EffectsModule.forRoot(effects),
     StoreModule.forRoot(reducers, { metaReducers }),
+    NgxCursorModule,
     EffectsModule.forRoot([]),
     !environment.production
       ? StoreDevtoolsModule.instrument({ maxAge: 50 })

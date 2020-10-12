@@ -1,0 +1,15 @@
+@import 'src/stylesheets/settings/variables';
+
+// @todo make a PR for ngx-cursor
+#ngx-cursor {
+    display: none!important;
+    @media screen and (min-width: $medium) {
+        display: block!important;
+    }
+    span {
+        color: $black!important;
+        font-weight: 400!important;
+        font-size: 7px!important;
+        padding: 5px!important;
+    }
+}

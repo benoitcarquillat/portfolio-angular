@@ -1,5 +1,5 @@
 <ng-container *ngIf="!url">
-  <div class="cta-button" [attr.data-direction]="direction">
+  <a class="cta-button" [attr.data-direction]="direction" cursor-active cursor-project cursor-size="50px">
     {{ textToDisplay }}
 
     <!-- prettier-ignore -->
@@ -7,7 +7,7 @@
     <path
     d="M6.612 11.634l4.114-4.092-1.54.176H.276V5.562h8.91l1.518.176-4.092-4.092 1.43-1.43 6.446 6.424-6.446 6.424-1.43-1.43z"
     fill="#fff" /></svg>
-  </div>
+  </a>
 </ng-container>
 
 <ng-container *ngIf="url && !disableLink">

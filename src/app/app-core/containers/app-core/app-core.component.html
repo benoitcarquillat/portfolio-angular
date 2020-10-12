@@ -5,6 +5,12 @@
   <div [@routeAnimations]="prepareRoute(o)">
     <router-outlet #o="outlet">
     </router-outlet>
+    <ngx-cursor 
+      color="#fff"
+      [selectors]="['more', 'project', 'link']"
+      [words]="['read more', 'Click me!', 'Navigate']"
+    >
+    </ngx-cursor>
   </div>
 
 </main>

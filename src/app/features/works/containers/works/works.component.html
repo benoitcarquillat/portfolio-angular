@@ -6,7 +6,7 @@
         <div class="works__work-wrapper">
           <div *ngFor="let work of works; let i = index">
             <div [@workAnimation]="i" *ngIf="isCurrentProject(i)">
-              <a [routerLink]="['work', work.slug]">
+              <a [routerLink]="['work', work.slug]" >
                 <projects-visual [currentAnimations$]="routeAnimation$" [numberOfWork]="works.length" [index]="index"
                   [work]="work">
                 </projects-visual>
@@ -19,7 +19,7 @@
         <div class="works__item-wrapper">
           <div class="works__list" *ngFor="let work of works; let i = index">
             <div [@textAnimation]="i" *ngIf="isCurrentProject(i)">
-              <a [routerLink]="['work', work.slug]">
+              <a [routerLink]="['work', work.slug]" cursor-more cursor-size="35px">
                 <projects-details [work]="work"></projects-details>
               </a>
             </div>
