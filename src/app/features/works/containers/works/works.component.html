@@ -17,13 +17,13 @@
       </div>
       <div class="works__right">
         <div class="works__item-wrapper">
-          <div class="works__list" *ngFor="let work of works; let i = index">
+          <ng-container class="works__list" *ngFor="let work of works; let i = index">
             <div [@textAnimation]="i" *ngIf="isCurrentProject(i)">
               <a [routerLink]="['work', work.slug]" cursor-more cursor-size="35px">
                 <projects-details [work]="work"></projects-details>
               </a>
             </div>
-          </div>
+          </ng-container>
         </div>
       </div>
     </div>
